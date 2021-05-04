@@ -4,16 +4,16 @@
 let HOURES = ['6AM : ', '7AM : ', '8AM : ', '9AM : ', '10AM : ', '11AM : ', '12AM :', ' 1PM : ', '2PM : ',` 3PM : `  , `4PM : `, '5PM :', ' 6PM: ', '7PM : '];
 let Seattle = {
     cityname: 'Seattle',
-    max: 65,
-    min: 23,
-    avg: 6.3,
+    maxCust: 65,
+    minCust: 23,
+    avgCookie: 6.3,
 
     randomcustomer: [],
     salesPerHour: [],
     Total: 0,
     randomCustNumber: function () {
         for (let i = 0; i < HOURES.length; i++) {
-            this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
+            this.randomcustomer.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
 
 
         }
@@ -22,7 +22,7 @@ let Seattle = {
 
     sealsCookies: function () {
         for (let i = 0; i < 14; i++) {
-            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avg));
+            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avgCookie));
             this.Total += this.salesPerHour[i];
 
 
@@ -67,16 +67,16 @@ Seattle.render();
 
 let Tokyo = {
     cityname: 'Tokyo',
-    max: 3,
-    min: 24,
-    avg: 1.2,
+    maxCust: 3,
+    minCust: 24,
+    avgCookie: 1.2,
 
     randomcustomer: [],
     salesPerHour: [],
     Total: 0,
     randomCustNumber: function () {
         for (let i = 0; i < HOURES.length; i++) {
-            this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
+            this.randomcustomer.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
 
 
         }
@@ -85,7 +85,7 @@ let Tokyo = {
 
     sealsCookies: function () {
         for (let i = 0; i < 14; i++) {
-            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avg));
+            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avgCookie));
             this.Total += this.salesPerHour[i];
 
 
@@ -134,16 +134,16 @@ Tokyo.render();
 
 let Dubai = {
     cityname: 'Dubai',
-    max: 38,
-    min: 11,
-    avg: 3.7,
+    maxCust: 38,
+    minCust: 11,
+    avgCookie: 3.7,
 
     randomcustomer: [],
     salesPerHour: [],
     Total: 0,
     randomCustNumber: function () {
         for (let i = 0; i < HOURES.length; i++) {
-            this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
+            this.randomcustomer.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
 
 
         }
@@ -152,7 +152,7 @@ let Dubai = {
 
     sealsCookies: function () {
         for (let i = 0; i < 14; i++) {
-            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avg));
+            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avgCookie));
             this.Total += this.salesPerHour[i];
 
 
@@ -199,16 +199,16 @@ Dubai.render();
 
 let Paris = {
     cityname: 'Paris',
-    max: 38,
-    min: 20,
-    avg: 2.3,
+    maxCust: 38,
+    minCust: 20,
+    avgCookie: 2.3,
 
     randomcustomer: [],
     salesPerHour: [],
     Total: 0,
     randomCustNumber: function () {
         for (let i = 0; i < HOURES.length; i++) {
-            this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
+            this.randomcustomer.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
 
 
         }
@@ -217,7 +217,7 @@ let Paris = {
 
     sealsCookies: function () {
         for (let i = 0; i < 14; i++) {
-            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avg));
+            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avgCookie));
             this.Total += this.salesPerHour[i];
 
 
@@ -268,16 +268,16 @@ Paris.render();
 
 let Lima = {
     cityname: 'Lima',
-    max: 38,
-    min: 16,
-    avg: 4.6,
+    maxCust: 38,
+    minCust: 16,
+    avgCookie: 4.6,
 
     randomcustomer: [],
     salesPerHour: [],
     Total: 0,
     randomCustNumber: function () {
         for (let i = 0; i < HOURES.length; i++) {
-            this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
+            this.randomcustomer.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
 
 
         }
@@ -286,7 +286,7 @@ let Lima = {
 
     sealsCookies: function () {
         for (let i = 0; i < 14; i++) {
-            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avg));
+            this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avgCookie));
             this.Total += this.salesPerHour[i];
 
 
