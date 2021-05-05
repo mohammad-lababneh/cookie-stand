@@ -11,11 +11,34 @@ function city(cityname, max, min, avg) {
     this.min = min;
     this.avg = avg;
     this.randomcustomer = [];
-    this.salesPerHour =[];
+    this.salesPerHour = [];
     this.Total = 0;
     cities.push(this);
 
 }
+
+
+city.prototype.randonNumber = function () {
+
+    for (let i = 0; i < HOURES.length; i++) {
+        this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
+
+    }
+}
+
+
+city.prototype.randomAvg = function () {
+
+    for (let i = 0; i < HOURES.length; i++) {
+
+        this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avg))
+        this.Total += this.salesPerHour[i];
+
+    }
+}
+
+
+
 
 
 
@@ -27,18 +50,75 @@ let Dubai = new city('Dubai', 38, 11, 3.7);
 let Paris = new city('Paris', 38, 20, 2.3);
 let Lima = new city('Lima', 16, 2, 4.6);
 
-let container = document.getElementById('container');
-let table = document.createElement('table');
-container.appendChild(table);
-
-tr1 = document.createElement( 'tr')
-table.appendChild(tr1);
-
-th1 = document.createElement('th');
-tr1.appendChild(th1);
-th1.textContent = cities[];
 
 
+function hoursDay() {
+
+    let container = document.getElementById('container');
+    
+    let table = document.createElement('table');
+    container.appendChild(table);
+
+    let tr1 = document.createElement('tr');
+    table.appendChild(tr1);
+
+
+    let th1 = document.createElement('th');
+    tr1.appendChild(th1);
+    th1.textContent = 'hours';
+
+    for (let i = 0; i < HOURES.length; i++) {
+
+        let th2 = document.createElement('th');
+        tr1.appendChild(th2);
+        th2.textContent = HOURES[i];
+
+    }
+}
+
+
+city.prototype.tab = function () {
+
+    let container = document.getElementById('container');
+    let table = document.createElement('table');
+    container.appendChild(table);
+
+    let tr1 = document.createElement('tr');
+    table.appendChild(tr1);
+
+    let td1 = document.createElement('td');
+    tr1.appendChild(td1);
+    td1.textContent = this.cityname;
+
+
+
+
+
+
+   
+    
+
+    let td2 = document.createElement('td');
+
+    for (let i = 0; i < HOURES.length; i++) {
+       
+        let td3 = document.createElement('td');
+        
+        tr1.appendChild(td2);
+       
+        tr1.appendChild(td3);
+        td3.textContent = this.salesPerHour[i];
+
+    }
+
+
+
+
+
+
+
+
+}
 
 
 
@@ -48,11 +128,32 @@ th1.textContent = cities[];
 
 
 
+hoursDay();
+
+Seattle.randonNumber();
+Seattle.randomAvg();
+Seattle.tab();
+
+Tokyo.randonNumber();
+Tokyo.randomAvg();
+Tokyo.tab();
 
 
+Dubai.randonNumber();
+Dubai.randomAvg();
+Dubai.tab();
 
 
+Paris.randonNumber();
+Paris.randomAvg();
+Paris.tab();
 
+
+Lima.randonNumber();
+Lima.randomAvg();
+Lima.tab();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // city.prototype.randonNumber = function () {
 
 //     for (let i = 0; i < HOURES.length; i++) {
@@ -103,7 +204,7 @@ th1.textContent = cities[];
 //     let tr1 = document.createElement('tr');
 //     table.appendChild(tr1);
 
-   
+
 //     let tr2 = document.createElement('tr');
 //     table.appendChild(tr2);
 // let tdCity = document.createElement('td')
@@ -118,32 +219,32 @@ th1.textContent = cities[];
 
 // }
 
-    //
-    // let th3 = document.createElement('th');
-    // tr1.appendChild(th3);
-    // th3.textContent = 'min';
 
-    // let th4 = document.createElement('th');
-    // tr1.appendChild(th4);
-    // th3.textContent = 'avg';
-    // }
+//     let th3 = document.createElement('th');
+//     tr1.appendChild(th3);
+//     th3.textContent = 'min';
 
-    // for (let std = 0; std < cities.length; std++) {
+//     let th4 = document.createElement('th');
+//     tr1.appendChild(th4);
+//     th3.textContent = 'avg';
+//     }
 
-    //     let stdRow = document.createElement('tr');
-    //     table.appendChild(stdRow);
+//     for (let std = 0; std < cities.length; std++) {
 
-    //     let nameTd = document.createElement('td');
-    //     stdRow.appendChild(nameTd);
-    //     nameTd.textContent = cities[std].stdName;
+//         let stdRow = document.createElement('tr');
+//         table.appendChild(stdRow);
 
-    //     let ageTd = document.createElement('td');
-    //     stdRow.appendChild(ageTd);
-    //     ageTd.textContent = cities[std].age;
+//         let nameTd = document.createElement('td');
+//         stdRow.appendChild(nameTd);
+//         nameTd.textContent = cities[std].stdName;
 
-    //     let gradeTd = document.createElement('td');
-    //     stdRow.appendChild(gradeTd);
-    //     gradeTd.textContent = cities[std].grade;
+//         let ageTd = document.createElement('td');
+//         stdRow.appendChild(ageTd);
+//         ageTd.textContent = cities[std].age;
+
+//         let gradeTd = document.createElement('td');
+//         stdRow.appendChild(gradeTd);
+//         gradeTd.textContent = cities[std].grade;
 
 // }
 
@@ -169,7 +270,7 @@ th1.textContent = cities[];
 // Lima.randonNumber();
 // Lima.cookiesNumber();
 // Lima.tab();
-// //////////////////////////////////////////////////////////////////
+// // //////////////////////////////////////////////////////////////////
 // Tokyo.citiesName();
 
 // console.log(cities);
