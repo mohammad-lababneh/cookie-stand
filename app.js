@@ -107,26 +107,14 @@ city.prototype.footer = function (){
     table.appendChild(tr1);
 
 
-    let th1 = document.createElement('th');
+    let th1 = document.createElement('td');
     tr1.appendChild(th1);
     th1.textContent = 'totals';
-
-
-
-
-
-
-
-
-
-
-
-
     
     let totalOfTotal = 0;
     for (let i = 0; i < HOURES.length; i++) {
 
-        let th2 = document.createElement('th');
+        let th2 = document.createElement('td');
         tr1.appendChild(th2);
    let TA = 0;
     for (let j = 0; j < HOURES.length; j++) {
@@ -139,7 +127,7 @@ city.prototype.footer = function (){
     let tr2 = document.createElement('tr');
     table.appendChild(tr2);
 
-    let th3 = document.createElement('th');
+    let th3 = document.createElement('td');
     tr2.appendChild(th3);
     th3.textContent = totalOfTotal;
   
@@ -147,9 +135,6 @@ city.prototype.footer = function (){
     }
 
 }
-
-
-
 
 
 hoursDay();
