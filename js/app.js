@@ -1,6 +1,5 @@
 'use strict';
 
-
 let HOURES = ['6AM : ', '7AM : ', '8AM : ', '9AM : ', '10AM : ', '11AM : ', '12AM :', ' 1PM : ', '2PM : ',` 3PM : `  , `4PM : `, '5PM :', ' 6PM: ', '7PM : '];
 let Seattle = {
     cityname: 'Seattle',
@@ -29,8 +28,6 @@ let Seattle = {
         }
     },
 
-
-
     render: function () {
         let container = document.getElementById('sales');
         let h2El = document.createElement('h2');
@@ -54,16 +51,12 @@ let Seattle = {
 
 }
 
-
-
 Seattle.randomCustNumber();
 Seattle.sealsCookies();
 Seattle.render();
 
 
 /////////////////////////////////////////////////////////////////////////
-
-
 
 let Tokyo = {
     cityname: 'Tokyo',
@@ -116,7 +109,6 @@ let Tokyo = {
 
 
 }
-
 
 
 Tokyo.randomCustNumber();
