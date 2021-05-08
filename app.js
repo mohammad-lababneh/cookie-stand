@@ -96,8 +96,8 @@ city.prototype.tab = function () {
     }
 
 }
-let TA = 0;
-function footer() {
+
+city.prototype.footer = function (){
 
     let container = document.getElementById('container');
     let table = document.createElement('table');
@@ -113,31 +113,36 @@ function footer() {
 
 
 
-    // let TA = 0;
-    // for (let i = 0; i < 14; i++) {
 
-    //     let td4 = document.createElement('td');
-    //     tr1.appendChild(td4);
-    //     TA += this.salesPerHour[i];
-    //     td4.textContent = TA[i];
-    //     console.log(TA);
 
-    // }
 
+
+
+
+
+
+
+    
     let totalOfTotal = 0;
-
     for (let i = 0; i < HOURES.length; i++) {
 
-    TA = 0;
+        let th2 = document.createElement('th');
+        tr1.appendChild(th2);
+   let TA = 0;
     for (let j = 0; j < HOURES.length; j++) {
 
-    TA += this.salesPerHour[i];
-    totalOfTotal+=cities[j]* this.salesPerHour[i];
-    }
+    TA +=  this.salesPerHour[i];
+    totalOfTotal += this.salesPerHour[i];
 
-    let th2 = document.createElement('th');
-    tr1.appendChild(th2);
     th2.textContent = TA;
+    }console.log(   TA);
+    let tr2 = document.createElement('tr');
+    table.appendChild(tr2);
+
+    let th3 = document.createElement('th');
+    tr2.appendChild(th3);
+    th3.textContent = totalOfTotal;
+  
 
     }
 
@@ -167,11 +172,10 @@ Paris.randonNumber();
 Paris.randomAvg();
 Paris.tab();
 
-
 Lima.randonNumber();
 Lima.randomAvg();
 Lima.tab();
-footer();
+Lima.footer();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // city.prototype.randonNumber = function () {
 
