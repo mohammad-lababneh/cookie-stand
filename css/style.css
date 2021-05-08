@@ -1,0 +1,48 @@
+body{
+font-family: inherit;
+    background-color: #f1f1f1;
+}
+
+#Tables table, td ,th
+        {
+        border :1px rgb(95, 8, 8) solid ;
+        }
+        #Tables table 
+        {
+            width: 1000px;
+            border-collapse: collapse;
+        }
+        #Tables
+        {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        #Tables td
+        {
+            text-align: center;
+            height: 17px;
+            width: 150px;
+        }
+        th
+        {
+            width: 150px;
+        }
+        td
+        {
+            width: 150px;
+        }
+
+        form {
+background-color: rgb(105, 85, 216);
+width: 250px;
+height: 100px;
+overflow: auto;
+        }
+
+      fieldset{
+color: rgb(255, 255, 255);
+
+            background-color: rgb(41, 5, 109);
+        }
+
+        
