@@ -20,7 +20,7 @@ function city(cityname, max, min, avg) {
 
 city.prototype.randonNumber = function () {
 
-    for (let i = 0; i < HOURES.length; i++) {
+    for (let i = 0; i < 14; i++) {
         this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
 
     }
@@ -29,19 +29,13 @@ city.prototype.randonNumber = function () {
 
 city.prototype.randomAvg = function () {
 
-    for (let i = 0; i < HOURES.length; i++) {
+    for (let i = 0; i < 14; i++) {
 
         this.salesPerHour.push(Math.ceil(this.randomcustomer[i] * this.avg))
         this.Total += this.salesPerHour[i];
 
     }
 }
-
-
-
-
-
-
 
 
 let Seattle = new city('Seattle', 65, 23, 6.3);
@@ -55,7 +49,6 @@ let Lima = new city('Lima', 16, 2, 4.6);
 function hoursDay() {
 
     let container = document.getElementById('container');
-    
     let table = document.createElement('table');
     container.appendChild(table);
 
@@ -92,37 +85,63 @@ city.prototype.tab = function () {
 
 
 
+    for (let i = 0; i < 14; i++) {
 
-
-
-   
-    
-
-    let td2 = document.createElement('td');
-
-    for (let i = 0; i < HOURES.length; i++) {
-       
         let td3 = document.createElement('td');
-        
-        tr1.appendChild(td2);
-       
+
+
         tr1.appendChild(td3);
         td3.textContent = this.salesPerHour[i];
 
     }
 
+}
+let TA = 0;
+function footer() {
+
+    let container = document.getElementById('container');
+    let table = document.createElement('table');
+    container.appendChild(table);
+
+    let tr1 = document.createElement('tr');
+    table.appendChild(tr1);
+
+
+    let th1 = document.createElement('th');
+    tr1.appendChild(th1);
+    th1.textContent = 'totals';
 
 
 
+    // let TA = 0;
+    // for (let i = 0; i < 14; i++) {
 
+    //     let td4 = document.createElement('td');
+    //     tr1.appendChild(td4);
+    //     TA += this.salesPerHour[i];
+    //     td4.textContent = TA[i];
+    //     console.log(TA);
 
+    // }
 
+    let totalOfTotal = 0;
+
+    for (let i = 0; i < HOURES.length; i++) {
+
+    TA = 0;
+    for (let j = 0; j < HOURES.length; j++) {
+
+    TA += this.salesPerHour[i];
+    totalOfTotal+=cities[j]* this.salesPerHour[i];
+    }
+
+    let th2 = document.createElement('th');
+    tr1.appendChild(th2);
+    th2.textContent = TA;
+
+    }
 
 }
-
-
-
-
 
 
 
@@ -152,7 +171,7 @@ Paris.tab();
 Lima.randonNumber();
 Lima.randomAvg();
 Lima.tab();
-
+footer();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // city.prototype.randonNumber = function () {
 
@@ -160,8 +179,6 @@ Lima.tab();
 //         this.randomcustomer.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
 
 //     }
-
-
 
 // }
 
