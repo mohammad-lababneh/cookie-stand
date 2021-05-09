@@ -1,6 +1,9 @@
 'use strict';
 let HOURES = ['6AM : ', '7AM : ', '8AM : ', '9AM : ', '10AM : ', '11AM : ', '12AM :', ' 1PM : ', '2PM : ', ` 3PM : `, `4PM : `, '5PM :', ' 6PM: ', '7PM : '];
 
+let container = document.getElementById('container');
+    let table = document.createElement('table');
+    container.appendChild(table);
 
 
 
@@ -46,11 +49,12 @@ let Lima = new city('Lima', 16, 2, 4.6);
 
 
 
+
 function hoursDay() {
 
-    let container = document.getElementById('container');
-    let table = document.createElement('table');
-    container.appendChild(table);
+    // let container = document.getElementById('container');
+    // let table = document.createElement('table');
+    // container.appendChild(table);
 
     let tr1 = document.createElement('tr');
     table.appendChild(tr1);
@@ -58,7 +62,7 @@ function hoursDay() {
 
     let th1 = document.createElement('th');
     tr1.appendChild(th1);
-    th1.textContent = 'hours';
+    th1.textContent ='';
 
     for (let i = 0; i < HOURES.length; i++) {
 
@@ -67,14 +71,17 @@ function hoursDay() {
         th2.textContent = HOURES[i];
 
     }
+let th3 = document.createElement('th')
+tr1.appendChild(th3);
+th3.textContent = 'Daily Location Total';
 }
 
 
-city.prototype.tab = function () {
+city.prototype.render = function () {
 
-    let container = document.getElementById('container');
-    let table = document.createElement('table');
-    container.appendChild(table);
+    // let container = document.getElementById('container');
+    // let table = document.createElement('table');
+    // container.appendChild(table);
 
     let tr1 = document.createElement('tr');
     table.appendChild(tr1);
@@ -94,73 +101,75 @@ city.prototype.tab = function () {
         td3.textContent = this.salesPerHour[i];
 
     }
-
+let th = document.createElement('th');
+tr1.appendChild(th);
+th.textContent = this.Total;
 }
 
-city.prototype.footer = function (){
+ function footer (){
 
-    let container = document.getElementById('container');
-    let table = document.createElement('table');
-    container.appendChild(table);
+//     // let container = document.getElementById('container');
+//     // let table = document.createElement('table');
+//     // container.appendChild(table);
 
     let tr1 = document.createElement('tr');
     table.appendChild(tr1);
 
 
-    let th1 = document.createElement('td');
+    let th1 = document.createElement('th');
     tr1.appendChild(th1);
-    th1.textContent = 'totals';
+    th1.textContent = 'Totals';
     
     let totalOfTotal = 0;
     for (let i = 0; i < HOURES.length; i++) {
-
-        let th2 = document.createElement('td');
-        tr1.appendChild(th2);
-   let TA = 0;
-    for (let j = 0; j < HOURES.length; j++) {
-
-    TA +=  this.salesPerHour[i];
-    totalOfTotal += this.salesPerHour[i];
-
-    th2.textContent = TA;
-    }console.log(   TA);
-    let tr2 = document.createElement('tr');
-    table.appendChild(tr2);
-
-    let th3 = document.createElement('td');
-    tr2.appendChild(th3);
-    th3.textContent = totalOfTotal;
+        let totalPerHour = 0;
+    for (let j = 0; j < cities.length; j++) {
+        // let th2 = document.createElement('td');
+        // tr1.appendChild(th2);
+        totalPerHour +=  cities[j].salesPerHour[i];
+    totalOfTotal += cities[j].salesPerHour[i];
+    }
+    let th2 = document.createElement('th')
+    tr1.appendChild(th2);
+        th2.textContent = totalPerHour;
+     }
+    // console.log(   totalPerHour);
   
 
+    let th3 = document.createElement('th');
+    tr1.appendChild(th3);
+    th3.textContent = totalOfTotal;
+  
     }
 
-}
+
 
 
 hoursDay();
 
 Seattle.randonNumber();
 Seattle.randomAvg();
-Seattle.tab();
+Seattle.render();
 
 Tokyo.randonNumber();
 Tokyo.randomAvg();
-Tokyo.tab();
+Tokyo.render();
 
 
 Dubai.randonNumber();
 Dubai.randomAvg();
-Dubai.tab();
+Dubai.render();
 
 
 Paris.randonNumber();
 Paris.randomAvg();
-Paris.tab();
+Paris.render();
 
 Lima.randonNumber();
 Lima.randomAvg();
-Lima.tab();
-Lima.footer();
+Lima.render();
+
+footer();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // city.prototype.randonNumber = function () {
 
