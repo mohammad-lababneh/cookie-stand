@@ -129,13 +129,7 @@ Paris.render();
 Lima.randonCustomerNumber();
 Lima.randomCookiesPerHour();
 Lima.render();
-
 footer();
-
-
-
-addAcity ();
-
 
 let lababnehCity = document.getElementById("lababnehCity");
 lababnehCity.addEventListener('submit', addAcity);
@@ -146,14 +140,27 @@ event.preventDefault();
 
 let cityName = event.target.city.value;
 let max = event.target.max.value;
+max=Math.floor(max);
 let min = event.target.min.value;
+min=Math.floor(min);
 let avg = event.target.avg.value;
-let newcity = new city(cityName,max,min,avg);
-console.log(cityName ,max , min, avg,);
+avg=parseFloat(avg);
 
-newcity.randonNumber();
-newcity.randomAvg();
-newcity.tab();
+let newcity = new city(cityName,max,min,avg);
+
+table.removeChild(table.lastElementChild);
+
+newcity.randonCustomerNumber();
+newcity.randomCookiesPerHour();
+newcity.render();
+footer();
 }
 
+for (let index = 0; index < Cities.length; index++) {
+    Cities[index].randonCustomerNumber();
+    Cities[index].randomCookiesPerHour();
+    Cities[index].render();
+    Cities[index].footer();
+    
+}
 
