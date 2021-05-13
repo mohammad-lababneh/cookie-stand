@@ -160,7 +160,7 @@ for (let index = 0; index < Cities.length; index++) {
     Cities[index].randonCustomerNumber();
     Cities[index].randomCookiesPerHour();
     Cities[index].render();
-    Cities[index].footer();
+    // Cities[index].footer();
     
 }
 
