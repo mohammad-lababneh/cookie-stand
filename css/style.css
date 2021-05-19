@@ -35,23 +35,33 @@ body{
         
 
         form {
-background-color: rgb(105, 85, 216);
+            
+            background-color: rgb(184, 150, 246);
 width: 300px;
 height:150px;
 overflow: auto;
+margin-left: 20px;
+margin-top: 10px;
+margin-bottom: 10px;
         }
 
       fieldset{
-color: rgb(255, 255, 255);
-
-            background-color: rgb(41, 5, 109);
+color: rgb(0, 0, 0);
+width: auto;
+height: auto;
+            background-color: rgb(184, 150, 246);
         }
 
         #a1{
-background-color: green;
+background-color: rgb(41, 241, 255);
+margin-left: 60px;
+margin-top: 20px;
+
         }
         #a2{
-            background-color: green;
+            background-color: rgb(41, 241, 255);
+            margin-left: 60px;
+            margin-top: 20px;
         }
         
 #one{
